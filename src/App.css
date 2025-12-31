@@ -1,38 +1,547 @@
-.App {
-  text-align: center;
+/* Add these to src/App.css */
+
+/* Navbar Custom Styles */
+.navbar-dark {
+  background-color: #0a192f !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.navbar-nav .nav-link:hover {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggler {
+  border: none !important;
+  padding: 0.5rem !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Footer Custom Styles */
+.footer a:hover {
+  color: white !important;
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+
+.footer .list-unstyled li:hover {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+.footer input.form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer input.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer input.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+}
+
+.footer .btn-light:hover {
+  background-color: #e0e0e0;
+}
+
+/* Active Link Styles */
+.nav-link.active {
+  color: white !important;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(1);
+}
+
+/* Responsive Navbar */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem 0;
+    background-color: #0a192f;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+  }
+  
+  .navbar-nav {
+    text-align: center;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.75rem 0 !important;
+  }
+  
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+  
+  .navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Sticky Navbar Animation */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+  .footer .text-md-start,
+  .footer .text-md-end {
+    text-align: center !important;
+  }
+  
+  .footer .d-flex.justify-content-md-end {
+    justify-content: center !important;
+  }
+  
+  .footer .gap-4 {
+    gap: 1rem !important;
+  }
+}
+
+/* Hover Effects for Footer Links */
+.footer a {
+  position: relative;
+  text-decoration: none;
+}
+
+.footer a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+/* Trust Badges Animation */
+.footer [class*="col-"] .d-flex:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.footer [class*="col-"] .d-flex:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+/* Add this to src/App.css */
+
+/* Ensure body takes full height */
+html, body {
+  height: 100%;
+}
+
+body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* Main content wrapper */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-@keyframes App-logo-spin {
+/* Navbar sticky positioning */
+.navbar {
+  position: sticky !important;
+  top: 0;
+  z-index: 1030;
+}
+
+/* Main content area */
+main {
+  flex: 1 0 auto;
+}
+
+/* Footer at bottom */
+footer {
+  flex-shrink: 0;
+}
+
+/* Fix for Bootstrap sticky behavior */
+.sticky-top {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0;
+  z-index: 1020;
+}
+
+/* Navbar link hover effect */
+.navbar-nav .nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+/* Mobile navbar adjustments */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.75rem 0 !important;
+    text-align: center;
+  }
+}
+
+/* Add these styles to src/App.css */
+
+/* Product Image Hover Effects */
+.product-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-img img {
+  transition: transform 0.5s ease;
+}
+
+.product-img:hover img {
+  transform: scale(1.05);
+}
+
+/* Star Rating */
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.fill-warning {
+  fill: #ffc107;
+}
+
+/* Badge Customizations */
+.badge-warning {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.badge-danger {
+  background-color: #dc3545 !important;
+}
+
+.badge-primary {
+  background-color: #0a192f !important;
+}
+
+/* Custom Button Sizes */
+.btn-lg {
+  padding: 1rem 2rem !important;
+  font-size: 1.1rem !important;
+}
+
+/* Section Background Colors */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* Testimonial Card Styles */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Stats Counter Animation */
+@keyframes countUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-count {
+  animation: countUp 0.8s ease-out;
+}
+
+/* Newsletter Input */
+.form-control-lg {
+  font-size: 1.1rem !important;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .display-2 {
+    font-size: 2.5rem !important;
+  }
+  
+  .display-4 {
+    font-size: 2rem !important;
+  }
+  
+  .display-5 {
+    font-size: 1.75rem !important;
+  }
+  
+  .fs-4 {
+    font-size: 1.1rem !important;
+  }
+  
+  .fs-5 {
+    font-size: 1rem !important;
+  }
+}
+
+/* Hover Effects for Category Banners */
+.position-relative:hover .position-absolute {
+  background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)) !important;
+  transition: background 0.3s ease;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, #0a192f, #64ffda);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Shadows */
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+/* Animation Classes */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Add these to src/App.css */
+
+/* Enhanced Add to Cart Button */
+.add-to-cart-btn {
+  background-color: transparent !important;
+  color: #0a192f !important;
+  border: 2px solid #0a192f !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0a192f !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2) !important;
+  border-color: #0a192f !important;
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(10, 25, 47, 0.1) !important;
+}
+
+/* Ripple effect for buttons */
+.add-to-cart-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.add-to-cart-btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Image fallback styles */
+img {
+  background-color: #f8f9fa;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* Card hover effects */
+.hover-shadow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Product image container */
+.product-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.product-img img {
+  transition: transform 0.5s ease;
+}
+
+.product-img:hover img {
+  transform: scale(1.05);
+}
+
+/* Enhanced outline buttons */
+.btn-outline-navy {
+  background-color: transparent !important;
+  color: #0a192f !important;
+  border: 2px solid #0a192f !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-outline-navy:hover {
+  background-color: #0a192f !important;
+  color: white !important;
+  border-color: #0a192f !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2);
+}
+
+/* Solid navy button enhancements */
+.btn-navy {
+  background-color: #0a192f !important;
+  border-color: #0a192f !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-navy:hover {
+  background-color: #112240 !important;
+  border-color: #112240 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.3);
+}
+
+/* Button icon animations */
+.add-to-cart-btn svg,
+.btn-navy svg,
+.btn-outline-navy svg {
+  transition: transform 0.3s ease;
+}
+
+.add-to-cart-btn:hover svg,
+.btn-navy:hover svg,
+.btn-outline-navy:hover svg {
+  transform: translateX(3px);
+}
+
+/* Loading animation for images */
+.img-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive image adjustments */
+@media (max-width: 768px) {
+  .product-img {
+    height: 200px !important;
+  }
+  
+  .add-to-cart-btn {
+    padding: 0.4rem 1rem !important;
+    font-size: 0.9rem !important;
   }
 }
