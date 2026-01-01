@@ -32,7 +32,7 @@ const HomePage = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: "sangria forte brick",
+      name: "sangria forte brick 500ml",
       type: "Red Wine",
       price: "₦5,000",
       image:

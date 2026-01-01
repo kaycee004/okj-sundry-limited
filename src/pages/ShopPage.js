@@ -68,13 +68,13 @@ const ShopPage = () => {
                   <h6 className="fw-bold mb-3">Price Range</h6>
                   <Form.Range
                     min="0"
-                    max="5000"
+                    max="500000"
                     value={priceRange[1]}
                     onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
                   />
                   <div className="d-flex justify-content-between mt-2">
-                    <span>$0</span>
-                    <span className="fw-bold">${priceRange[1]}</span>
+                    <span>₦0</span>
+                    <span className="fw-bold">₦{priceRange[1]}</span>
                   </div>
                 </div>
 

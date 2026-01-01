@@ -1,15 +1,16 @@
 // src/data/products.js
 import johnny from '../assets/whiskey/johnny walker.jpg'
+import sangrai from '../assets/wine/sangria-forte-brick-500ml.png'
 
 export const products = [
   {
     id: 1,
-    name: 'Château Margaux 2015',
+    name: 'sangria forte brick 500ml',
     category: 'wine',
     type: 'Red Wine',
-    price: 299,
+    price: 5000,
     discountPrice: 279,
-    image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800&auto=format&fit=crop',
+    image: sangrai,
     rating: 4.9,
     description: 'Premier Grand Cru Classé from Bordeaux',
     origin: 'France',
@@ -22,7 +23,7 @@ export const products = [
     name: 'Johnny Walker',
     category: 'whiskey',
     type: 'Whiskey',
-    price: 450,
+    price: 75000,
     discountPrice: null,
     image: johnny,
     rating: 4.8,

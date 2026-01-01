@@ -47,7 +47,7 @@ const ProductCard = ({ product }) => {
           <Card.Text className="text-muted mb-3">{product.type}</Card.Text>
 
           <div className="d-flex justify-content-between align-items-center">
-            <div className="fs-4 fw-bold text-dark">${product.price}</div>
+            <div className="fs-4 fw-bold text-dark">₦{product.price}</div>
             <Button
               variant="outline-navy"
               className="add-to-cart-btn d-flex align-items-center gap-2"
