@@ -96,21 +96,21 @@ const Footer = () => {
                 </p>
                 <div className="d-flex gap-3">
                   <a
-                    href="#"
+                    href="/"
                     className="text-white"
                     style={{ fontSize: "1.2rem" }}
                   >
                     <FaFacebookF size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="/"
                     className="text-white"
                     style={{ fontSize: "1.2rem" }}
                   >
                     <FaInstagram size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="/"
                     className="text-white"
                     style={{ fontSize: "1.2rem" }}
                   >

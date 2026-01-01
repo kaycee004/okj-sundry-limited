@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.29fe4ee4.css",
+    "main.js": "/static/js/main.b72dc43f.js",
+    "static/media/wine cellar.jpg": "/static/media/wine cellar.4a03d675d8968674c8f0.jpg",
+    "static/media/2m.jpg": "/static/media/2m.4786836beab553577fd3.jpg",
+    "static/media/sangria-forte-brick-500ml.png": "/static/media/sangria-forte-brick-500ml.989597f04f5743e93eca.png",
+    "static/media/johnny walker.jpg": "/static/media/johnny walker.2ebd64e39a06d0760433.jpg",
+    "static/media/1m.jpg": "/static/media/1m.efb3895a8244a43897de.jpg",
+    "static/media/1f.jpg": "/static/media/1f.80d5b63c8586bcb5d41d.jpg",
+    "static/media/glenfiddich.jpg": "/static/media/glenfiddich.76b53e5a70a564492fd5.jpg",
+    "static/media/kc.png": "/static/media/kc.50252bd4b87182b0b2f9.png",
+    "static/media/joe.png": "/static/media/joe.5f0598f6f74b60eafdf8.png",
+    "static/media/oz.png": "/static/media/oz.369553b82e379696096f.png",
+    "static/media/carnival-strawberry.jpg": "/static/media/carnival-strawberry.a996e7e1db1a4e8f71bf.jpg",
+    "index.html": "/index.html",
+    "main.29fe4ee4.css.map": "/static/css/main.29fe4ee4.css.map",
+    "main.b72dc43f.js.map": "/static/js/main.b72dc43f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29fe4ee4.css",
+    "static/js/main.b72dc43f.js"
+  ]
+}

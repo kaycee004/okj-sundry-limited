@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import johnny from "../assets/whiskey/johnny walker.jpg";
 import glen from "../assets/whiskey/glenfiddich.jpg";
 import strawberry from "../assets/whiskey/carnival-strawberry.jpg";
+import sangrai from '../assets/wine/sangria-forte-brick-500ml.png'
 import clara from "../assets/people/1f.jpg";
 import samuel from "../assets/people/1m.jpg";
 import jude from "../assets/people/2m.jpg";
@@ -31,11 +32,11 @@ const HomePage = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: "Château Margaux 2015",
+      name: "sangria forte brick",
       type: "Red Wine",
-      price: "₦200,000",
+      price: "₦5,000",
       image:
-        "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800&h=600&fit=crop",
+        sangrai,
       rating: 4.9,
       category: "wine",
     },

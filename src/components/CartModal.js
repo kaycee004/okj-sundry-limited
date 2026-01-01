@@ -1,14 +1,21 @@
 // src/components/CartModal.js
-import React from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import { X, Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useCart } from '../contexts/CartContext';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import { X, Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+// import { motion, AnimatePresence } from 'framer-motion';
+import { useCart } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 const CartModal = () => {
-  const { cart, removeFromCart, updateQuantity, cartTotal, isCartOpen, setIsCartOpen } = useCart();
+  const {
+    cart,
+    removeFromCart,
+    updateQuantity,
+    cartTotal,
+    isCartOpen,
+    setIsCartOpen,
+  } = useCart();
 
   return (
     <Modal
@@ -16,29 +23,26 @@ const CartModal = () => {
       onHide={() => setIsCartOpen(false)}
       dialogClassName="modal-fullscreen-md-down"
       contentClassName="border-0"
-      style={{ left: 'auto', right: 0 }}
+      style={{ left: "auto", right: 0 }}
     >
       <Modal.Header className="border-0">
         <Modal.Title className="fw-bold">Your Cart</Modal.Title>
-        <Button 
-          variant="link" 
+        <Button
+          variant="link"
           className="p-0 ms-auto"
           onClick={() => setIsCartOpen(false)}
         >
           <X size={24} />
         </Button>
       </Modal.Header>
-      
+
       <Modal.Body className="py-0">
         {cart.length === 0 ? (
           <div className="text-center py-5">
             <ShoppingBag size={64} className="text-muted mb-4" />
             <h5 className="fw-bold mb-3">Your cart is empty</h5>
             <p className="text-muted mb-4">Add some products to get started</p>
-            <Button 
-              variant="navy" 
-              onClick={() => setIsCartOpen(false)}
-            >
+            <Button variant="navy" onClick={() => setIsCartOpen(false)}>
               Continue Shopping
             </Button>
           </div>
@@ -46,7 +50,7 @@ const CartModal = () => {
           <div className="d-flex flex-column gap-3">
             {cart.map((item) => (
               <div key={item.id} className="d-flex gap-3 p-3 bg-light rounded">
-                <div style={{ width: '80px', height: '80px', flexShrink: 0 }}>
+                <div style={{ width: "80px", height: "80px", flexShrink: 0 }}>
                   <img
                     src={item.image}
                     alt={item.name}
@@ -71,7 +75,9 @@ const CartModal = () => {
                         variant="outline-secondary"
                         size="sm"
                         className="p-1"
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity - 1)
+                        }
                       >
                         <Minus size={16} />
                       </Button>
@@ -80,7 +86,9 @@ const CartModal = () => {
                         variant="outline-secondary"
                         size="sm"
                         className="p-1"
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity + 1)
+                        }
                       >
                         <Plus size={16} />
                       </Button>
@@ -95,7 +103,7 @@ const CartModal = () => {
           </div>
         )}
       </Modal.Body>
-      
+
       {cart.length > 0 && (
         <Modal.Footer className="border-0 flex-column">
           <div className="w-100 d-flex justify-content-between align-items-center mb-3">

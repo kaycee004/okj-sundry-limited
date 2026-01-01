@@ -155,13 +155,13 @@ const ShopPage = () => {
                     <span className="page-link">1</span>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#">2</a>
+                    <a className="page-link" href="/">2</a>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#">3</a>
+                    <a className="page-link" href="/">3</a>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#">Next</a>
+                    <a className="page-link" href="/">Next</a>
                   </li>
                 </ul>
               </nav>
