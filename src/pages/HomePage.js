@@ -68,7 +68,7 @@ const HomePage = () => {
       type: "Blended Scotch",
       price: "₦85,000",
       image: johnny,
-      discount: "10% OFF",
+      discount: null,
       category: "whiskey",
     },
     {
@@ -87,7 +87,7 @@ const HomePage = () => {
       type: "Single Malt Scotch",
       price: "₦120,000",
       image: glen,
-      discount: "15% OFF",
+      discount: null,
       category: "whiskey",
     },
   ];
@@ -510,7 +510,7 @@ const HomePage = () => {
                             <span className="text-muted text-decoration-line-through ms-2">
                               $
                               {(
-                                parseInt(product.price.replace("$", "")) * 1.1
+                                parseInt(product.price.replace("", "")) * 1.1
                               ).toFixed(0)}
                             </span>
                           )}
