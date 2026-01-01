@@ -129,7 +129,7 @@ const HomePage = () => {
     {
       icon: <Truck size={32} />,
       title: "Free Shipping",
-      description: "On all orders over $100",
+      description: "Based on order",
     },
     {
       icon: <Shield size={32} />,

@@ -36,7 +36,7 @@ const Footer = () => {
                 <FaTruck size={32} className="text-white mb-2" />
                 <span className="fw-bold">Free Shipping</span>
                 <small className="text-light opacity-75">
-                  On orders over $100
+                  Based on order
                 </small>
               </div>
             </Col>
